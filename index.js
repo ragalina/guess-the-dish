@@ -23,14 +23,14 @@ var options = [
     {country: "Brazil", food: "Feijoada", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/feijoada-1024x682.jpg"},
     {country: "Cambodia", food: "Amok Trey", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/amok-trey.jpg"},
     {country: "Canada", food: "Poutine", link: "https://xyuandbeyond.com/wp-content/uploads/poutine-1024x689.jpg"},
-    {country: "Canada", food: "Butter Tarts", link: "https://xyuandbeyond.com/wp-content/uploads/2019/07/Pecan_butter_tart_May_2011.jpg"},
-    {country: "Canada", food: "Nanaimo Bars", link: "https://xyuandbeyond.com/wp-content/uploads/2019/07/Choc-Coconut-Nanaimo-Bars-3-16-8-1.jpg"},
+    {country: "Canada", food: "Butter Tarts", link: "https://images-gmi-pmc.edge-generalmills.com/980e0cfd-d17f-4e56-acbf-b61fce74413c.jpg"},
+    {country: "Canada", food: "Nanaimo Bars", link: "https://static01.nyt.com/images/2019/03/27/dining/22nanaimorex/merlin_150934053_2e941dba-a5b4-4183-a991-8d2eb3428fb8-threeByTwoMediumAt2X.jpg"},
     {country: "Canada", food: "Montreal-style Smoked Meat and Bagels", link: "https://xyuandbeyond.com/wp-content/uploads/2019/07/1024px-Schwartz_smoked_meat_montreal-e1578574568374.jpg"},
     {country: "Chile", food: "Pastel de Choclo", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/Pastel-de-Choclo-1024x682.jpg"},
     {country: "China", food: "Peking duck", link: "https://xyuandbeyond.com/wp-content/uploads/crispy-duck-in-the-window-1024x768.jpg"},
     {country: "Colombia", food: "Bandeja Paisa", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/Bandeja-Paisa-1024x768.jpg"},
     {country: "Colombia & Venezuela", food: "Arepas", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/arepa-1024x768.jpg"},
-    {country: "Côte d'Ivoire", food: "Aloco", link: "https://xyuandbeyond.com/wp-content/uploads/2017/12/plantains-960x685.jpg"},
+    {country: "Côte d'Ivoire", food: "Aloco", link: "https://theivoryplates.files.wordpress.com/2017/03/un_plat_dalloco_fried_plantains.jpg?w=720"},
     {country: "Cuba", food: "Ropa Vieja", link: "https://xyuandbeyond.com/wp-content/uploads/2017/12/ropa-vieja-960x720.jpg"},
     {country: "Cyprus", food: "Fasolada", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/white-bean-soup-greek-682x1024.jpg"},
     {country: "Czech Republic", food: "Vepřo knedlo zelo", link: "https://xyuandbeyond.com/wp-content/uploads/2023/06/roast-pork-and-dumplings.jpg"},
@@ -56,20 +56,20 @@ var options = [
     {country: "Germany", food: "Sauerbraten", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/sauerbraten-1024x682.jpg"},
     {country: "Germany", food: "Currywurst", link: "https://xyuandbeyond.com/wp-content/uploads/2021/06/currywurst-1024x682.jpg"},
     {country: "Ghana", food: "Fufu", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/fufuandgoatpeppersoup-1024x576.jpg"},
-    {country: "Greece", food: "Fasolada", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/white-bean-soup-Cyprus-or-Greece-1024x682.jpg"},
-    {country: "Greece", food: "Moussaka", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/moussaka-1024x768.jpg"},
+    {country: "Greece", food: "Fasolada", link: "https://www.mygreekdish.com/wp-content/uploads/2014/01/Traditional-Greek-bean-soup-recipe-Fasolada.jpeg"},
+    {country: "Greece", food: "Moussaka", link: "https://www.mygreekdish.com/wp-content/uploads/2013/05/Moussaka-recipe-Traditional-Greek-Moussaka-with-Eggplants.jpg"},
     {country: "Guyana", food: "Pepperpot", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/pepperpot-1024x609.jpg"},
     {country: "Haiti", food: "Fried Pork with Rice & Beans", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/fried-pork-with-rice-1024x498.jpg"},
     {country: "Honduras", food: "Plato Tipico de Honduras", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/plato.jpg"},
     {country: "Hong Kong", food: "Dim Sum", link: "https://xyuandbeyond.com/wp-content/uploads/chinese-dim-sum-in-Chinatown.jpg"},
     {country: "Hungary", food: "Goulash", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/hungarian-goulash.jpg"},
-    {country: "Iceland", food: "Skyr", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/skyr-841x1024.jpg"},
+    {country: "Iceland", food: "Skyr", link: "https://www.luvele.com/cdn/shop/articles/skyr_06b_1024x.png?v=1630383002"},
     {country: "Iceland", food: "Hákarl", link: "https://live.staticflickr.com/2159/1814435667_c6a300d6bc_c.jpg"},
     {country: "Iceland", food: "Rye bread and butter", link: "https://xyuandbeyond.com/wp-content/uploads/2017/11/Icelandic_Rye_Bread_ofpenguinsandelephants-960x640.jpg"},
-    {country: "India", food: "Biriyani", link: "https://xyuandbeyond.com/wp-content/uploads/2018/01/biriyani-chicken-cooked-1624487.jpg"},
-    {country: "India", food: "Tandoori Chicken", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/tandoori-chicken-808x1024.jpg"},
+    {country: "India", food: "Biriyani", link: "https://vaya.in/recipes/wp-content/uploads/2018/03/Ambur-Chicken-Biriyani.jpg"},
+    {country: "India", food: "Tandoori Chicken", link: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Tandoori_chicken_laccha_piyaz1_%2836886283595%29.jpg/1200px-Tandoori_chicken_laccha_piyaz1_%2836886283595%29.jpg"},
     {country: "India", food: "Masala Dosa", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/indian-dosa2-1024x576.jpg"},
-    {country: "Indonesia", food: "Nasi Goreng", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/Nasi-Goreng-1024x682.jpg"},
+    {country: "Indonesia", food: "Nasi Goreng", link: "https://images.getrecipekit.com/20230527000540-andy-20cooks-20-20nasi-20goreng.jpg?aspect_ratio=16:9&quality=90&"},
     {country: "Iran", food: "Chelo Kebab", link: "https://xyuandbeyond.com/wp-content/uploads/2022/02/Kebab-1024x768.jpg"},
     {country: "Ireland", food: "Irish Stew", link: "https://xyuandbeyond.com/wp-content/uploads/2018/04/Irish-stew-2-e1577971733548.jpg"},
     {country: "Ireland", food: "Colcannon", link: "https://xyuandbeyond.com/wp-content/uploads/2018/10/colcannon-e1539959203368.jpg"},
@@ -78,31 +78,31 @@ var options = [
     {country: "Italy", food: "Ragu alla Bolognese", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/spag-bol-1024x576.jpg"},
     {country: "Italy", food: "Napoletana Pizza", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/via-mercanti-pizza-double-1024x731.jpg"},
     {country: "Italy", food: "Fiorentina Steak", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/Fiorentina-Steak-1024x768.jpg"},
-    {country: "Italy", food: "Risotto", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/risotto-rice-1024x670.jpg"},
+    {country: "Italy", food: "Risotto", link: "https://viaverdimiami.com/wp-content/uploads/2017/04/2017-04-14-ViaVerdi.jpg"},
     {country: "Italy", food: "Prosciutto di Parma", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/serving-jamon-1024x682.jpg"},
     {country: "Jamaica", food: "Ackee and Saltfish", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/ackee-and-saltfish-1024x682.jpg"},
     {country: "Jamaica", food: "Rice and Peas", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/flying-fish-and-rice-1024x686.jpg"},
     {country: "Japan", food: "Curry", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/japanese-curry-1024x682.jpg"},
     {country: "Japan", food: "Katsudon", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/katsudon.jpg"},
     {country: "Japan", food: "Sushi & Sashimi", link: "https://xyuandbeyond.com/wp-content/uploads/2017/03/Western_Sushi-960x638.jpg"},
-    {country: "Japan", food: "Ramen", link: "https://xyuandbeyond.com/wp-content/uploads/2020/08/Tonkotsu-ramen-scaled.jpg"},
+    {country: "Japan", food: "Ramen", link: "https://www.justonecookbook.com/wp-content/uploads/2023/04/Spicy-Shoyu-Ramen-8055-I.jpg"},
     {country: "Jordan", food: "Mansaf", link: "https://xyuandbeyond.com/wp-content/uploads/2023/03/Mansaf-national-dish-of-Jordan-768x1024.jpg"},
     {country: "Kazakhstan", food: "Beshbarmak", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/1024px-Beshbarmak_national_dish_3991850909.jpg"},
-    {country: "Kenya", food: "Ugali", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/877px-Ugali_and_cabbage.jpg"},
-    {country: "Korea", food: "Kimchi", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/Kimchi-1024x768.jpg"},
-    {country: "Korea", food: "Beef Bulgogi", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/bul-gogi-1168325_1280-1024x682.jpg"},
+    {country: "Kenya", food: "Ugali", link: "https://upload.wikimedia.org/wikipedia/commons/4/48/Ugali_%26_Sukuma_Wiki.jpg"},
+    {country: "South Korea", food: "Kimchi", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/Kimchi-1024x768.jpg"},
+    {country: "South Korea", food: "Beef Bulgogi", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/bul-gogi-1168325_1280-1024x682.jpg"},
     {country: "Laos", food: "Larb", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/larb.jpg"},
     {country: "Latvia", food: "Pelēkie zirņi ar speķi ", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/Pelekie-zirni-ar-speki-un-ceptiem-sipoliem-1024x683.jpg"},
-    {country: "Lebanon & Syria", food: "Kibbeh", link: "https://xyuandbeyond.com/wp-content/uploads/2016/08/mexican-kibbe-e1499518972896-643x800.jpg"},
+    {country: "Lebanon", food: "Kibbeh", link: "https://falasteenifoodie.com/wp-content/uploads/2022/11/Fried-Lebanese-Kibbeh-Recipe.jpeg"},
     {country: "Liechtenstein", food: "Käsknöpfle", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/spatzle-with-fries--1024x682.jpg"},
     {country: "Luxembourg", food: "Judd mat Gaardebounen", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/1024px-JuddMatGaardebounen_Beer-681x1024.jpg"},
     {country: "Malaysia", food: "Nasi Lemak", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/nasi-lemak-1024x682.jpg"},
     {country: "Mexico", food: "Tacos", link: "https://xyuandbeyond.com/wp-content/uploads/2018/10/seafood-tacos-e1577972819276.jpg"},
     {country: "Mexico", food: "Mole Poblano", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/Mole-ThreeColors.jpg"},
     {country: "Mexico", food: "Chiles en Nogada", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/chiles-nogala.jpg"},
-    {country: "Mexico", food: "Tamales", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/mexican-women-making-tamales-1024x682.jpg"},
+    {country: "Mexico", food: "Tamales", link: "https://patijinich.com/wp-content/uploads/2021/09/Jalisco-Style-Chicken-Tamales-scaled.jpg"},
     {country: "Moldova", food: "Mămăligă", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/polenta-cornmeal-porridge-1024x684.jpg"},
-    {country: "Morocco", food: "Tagine", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/fish-tajine-with-chermoula-hot-sauce-1024x827.jpg"},
+    {country: "Morocco", food: "Tagine", link: "https://ourbigescape.com/wp-content/uploads/2023/03/18.-One-Pot-Moroccan-Vegetable-Tagine.png"},
     {country: "Morocco", food: "Couscous", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/Bowl-of-Couscous-to-Cook-1024x683.jpg"},
     {country: "Nepal", food: "Dal Bhaath", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/dal-bhat-1024x683.jpg"},
     {country: "New Zealand", food: "Pavlova", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/pavlova-1024x683.jpg"},
@@ -121,11 +121,11 @@ var options = [
     {country: "Scotland", food: "Tablet", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/fudge-1024x670.jpg"},
     {country: "Singapore", food: "Hainanese Chicken Rice", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/Hainanese-Chicken-Rice-1024x683.jpg"},
     {country: "Slovakia", food: "Bryndzové halušky", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/halusky-1024x576.jpg"},
-    {country: "South Africa", food: "Braai", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/sausage-types-South-AFrican-Braai-753x1024.jpg"},
+    {country: "South Africa", food: "Braai", link: "https://i.pinimg.com/originals/65/2e/e9/652ee9a72c5392d14f9edab223d1093e.jpg"},
     {country: "South Africa", food: "Bobotie", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/bobotie.jpg"},
     {country: "Spain", food: "Paella", link: "https://xyuandbeyond.com/wp-content/uploads/2019/06/paella.jpg"},
-    {country: "Spain", food: "Gazpacho", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/gazpacho.jpg"},
-    {country: "Spain", food: "Tortilla Espanola", link: "https://xyuandbeyond.com/wp-content/uploads/2017/06/1024px-Tortilla_de_patata_y_cebolla-960x585.jpg"},
+    {country: "Spain", food: "Gazpacho", link: "https://www.foodnetwork.com/content/dam/images/food/fullset/2011/6/10/0/EA1111H_gazpacho_s4x3.jpg"},
+    {country: "Spain", food: "Tortilla Espanola", link: "https://www.goya.com/media/3816/tortilla-espan-ola-potato-omelet.jpg?quality=80"},
     {country: "Spain", food: "Iberico Jamon", link: "https://xyuandbeyond.com/wp-content/uploads/2019/11/jamon-iberico.jpg"},
     {country: "Sri Lanka", food: "Rice and Curry", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/chicken-coconut-curry.jpg"},
     {country: "Sweden", food: "Swedish Meatballs", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/ikea-swedish-meatballs.jpg"},
@@ -143,10 +143,10 @@ var options = [
     {country: "Ukraine", food: "Borscht", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/borscht-1024x682.jpg"},
     {country: "USA", food: "Hamburgers", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/hamburger-1024x683.jpg"},
     {country: "USA", food: "Hot Dogs", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/hot-dogs-970x1024.jpg"},
-    {country: "USA", food: "Mac ‘n’ Cheese", link: "https://xyuandbeyond.com/wp-content/uploads/2017/03/mac-n-cheese-960x720.jpg"},
+    {country: "USA", food: "Mac ‘n’ Cheese", link: "https://hips.hearstapps.com/hmg-prod/images/delish-210608-millie-peartree-mac-and-cheese-351-vertical-2x1-1677086449.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*"},
     {country: "Uzbekistan", food: "Plov", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/Plov_Tashkent.jpg"},
     {country: "Venezuela", food: "Pabellón criollo", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/Pabellon-criollo-1024x788.jpg"},
-    {country: "Vietnam", food: "Pho", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/Pho-Vietnam.jpg"},
+    {country: "Vietnam", food: "Pho", link: "https://hips.hearstapps.com/hmg-prod/images/instant-pot-pho-1-1649171262.jpg?crop=0.888888888888889xw:1xh;center,top&resize=1200:*"},
     {country: "Wales", food: "Cawl", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/Cawl.jpg"},
     {country: "Wales", food: "Laverbread", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/welsh-laver-cakes-1024x536.jpg"},
     {country: "Wales", food: "Welsh Cakes", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/welsh-cakes-1024x768.jpg"},
@@ -225,15 +225,7 @@ async function initMap() {
     })
 }
 
-function generateDish() {
-    var number = Math.floor(Math.random() * 144);
-    country_var = options[number].country;
-    dish_var = options[number].food;
-    link_var = options[number].link;
-    document.getElementById("answer").innerHTML = country_var + ", " + dish_var;
-}
-
-document.getElementById("check_guess").addEventListener("click", checkGuess);
+document.getElementById("check-guess").addEventListener("click", checkGuess);
 
 function checkGuess() {
     if (guess_country == country_var) {
@@ -241,5 +233,22 @@ function checkGuess() {
     }
 }
 
+document.getElementById("play").addEventListener("click", generateDish);
+
+function generateDish() {
+    var number = Math.floor(Math.random() * 144);
+    country_var = options[number].country;
+    dish_var = options[number].food;
+    link_var = options[number].link;
+    document.getElementById("answer").innerHTML = country_var + ", " + dish_var;
+    document.getElementById("food-pic").innerHTML = '<img src="'+link_var+'" height="300"/>';  
+}
+
+document.getElementById("instructions").addEventListener("click", showInstructions);
+
+function showInstructions() {
+    window.alert("Click the map below to make a guess of where this dish originates from! " + 
+        " Click 'Check Guess' below to see how far you are from the actual country of origin.");
+}
+
 initMap();
-generateDish();

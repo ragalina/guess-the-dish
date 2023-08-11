@@ -1,11 +1,88 @@
- #map {
-    height: 50%;
-    width: 50%;
-}
-  
 html,
 body {
     height: 100%;
     margin: 0;
     padding: 0;
+}
+
+p, h1 {
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 70%;
+    margin-top: 3%;
+}
+
+.buttons {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+}
+
+button {
+    padding: 2% 5% 2% 5%;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    display: block;
+    margin-top: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.main {
+    display: inline-flex;
+    height: 300px;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.food-pic {
+    text-align: center;
+    justify-content: center;
+    margin-right: 2%;
+    padding: 0;
+    margin: 0;
+}
+
+#map {
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    margin-left: 2% !important; 
+    padding: 0;
+    margin: 0;
+}
+
+.result-content {
+    display: block;
+    width: 100%;
+
+}
+
+#result {
+    display: block;
+    border: 1px solid red;
+    width: 50%;
+    margin: auto;
+}
+
+#answer {
+    display: block;
+    border: 1px solid red;
+    width: 50%;
+    margin: auto;
+
+}
+
+#country {
+    display: block;
+    border: 1px solid red;
+    width: 50%;
+    margin: auto;
 }
