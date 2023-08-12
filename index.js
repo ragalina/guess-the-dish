@@ -1,9 +1,17 @@
 let map;
+var marker;
+const {encoding} = await google.maps.importLibrary("geometry")
 
 var guess_country = "";
 var country_var = "";
 var dish_var = "";
 var link_var = "";
+var guess_lat;
+var guess_long;
+var lat_var;
+var long_var;
+var distance;
+var sim_score;
 
 var options = [
     {country: "Afghanistan", food: "Kabuli Pulao", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/rice-pilaf.jpg"},
@@ -29,7 +37,7 @@ var options = [
     {country: "Chile", food: "Pastel de Choclo", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/Pastel-de-Choclo-1024x682.jpg"},
     {country: "China", food: "Peking duck", link: "https://xyuandbeyond.com/wp-content/uploads/crispy-duck-in-the-window-1024x768.jpg"},
     {country: "Colombia", food: "Bandeja Paisa", link: "https://xyuandbeyond.com/wp-content/uploads/2022/05/Bandeja-Paisa-1024x768.jpg"},
-    {country: "Colombia & Venezuela", food: "Arepas", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/arepa-1024x768.jpg"},
+    {country: "Colombia", food: "Arepas", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/arepa-1024x768.jpg"},
     {country: "Côte d'Ivoire", food: "Aloco", link: "https://theivoryplates.files.wordpress.com/2017/03/un_plat_dalloco_fried_plantains.jpg?w=720"},
     {country: "Cuba", food: "Ropa Vieja", link: "https://xyuandbeyond.com/wp-content/uploads/2017/12/ropa-vieja-960x720.jpg"},
     {country: "Cyprus", food: "Fasolada", link: "https://xyuandbeyond.com/wp-content/uploads/2022/03/white-bean-soup-greek-682x1024.jpg"},
@@ -152,7 +160,103 @@ var options = [
     {country: "Wales", food: "Welsh Cakes", link: "https://xyuandbeyond.com/wp-content/uploads/2022/04/welsh-cakes-1024x768.jpg"},
 ]
 
-function setMarker(location, marker) {
+var capital_latlng = [
+    {country: "Afghanistan", cap_lat: 34.5166666666666, cap_long: 69.183333,},
+    {country: "Antigua & Barbuda", cap_lat: 17.1166666666666, cap_long: -61.85,},
+    {country: "Australia", cap_lat: -35.2666666666666, cap_long: 149.133333,},
+    {country: "Austria", cap_lat: 48.2, cap_long: 16.366667,},
+    {country: "Azerbaijan", cap_lat: 40.3833333333333, cap_long: 49.866667,},
+    {country: "Bangladesh", cap_lat: 23.7166666666666, cap_long: 90.4,},
+    {country: "Barbados", cap_lat: 13.1, cap_long: -59.616667,},
+    {country: "Belgium", cap_lat: 50.8333333333333, cap_long: 4.333333,},
+    {country: "Benin", cap_lat: 6.48333333333333, cap_long: 2.616667,},
+    {country: "Bhutan", cap_lat: 27.4666666666666, cap_long: 89.633333,},
+    {country: "Bosnia & Herzegovina", cap_lat: 43.8666666666666, cap_long: 18.416667,},
+    {country: "Botswana", cap_lat: -24.6333333333333, cap_long: 25.9,},
+    {country: "Brazil", cap_lat: -15.7833333333333, cap_long: -47.916667,},
+    {country: "Cambodia", cap_lat: 11.55, cap_long: 104.916667,},
+    {country: "Canada", cap_lat: 45.4166666666666, cap_long: -75.7,},
+    {country: "Chile", cap_lat: -33.45, cap_long: -70.666667,},
+    {country: "China", cap_lat: 39.9166666666666, cap_long: 116.383333,},
+    {country: "Colombia", cap_lat: 4.6, cap_long: -74.083333,},
+    {country: "Cote d'Ivoire", cap_lat: 6.81666666666666, cap_long: -5.266667,},
+    {country: "Cuba", cap_lat: 23.1166666666666, cap_long: -82.35,},
+    {country: "Cyprus", cap_lat: 35.1666666666666, cap_long: 33.366667,},
+    {country: "Czech Republic", cap_lat: 50.0833333333333, cap_long: 14.466667,},
+    {country: "Democratic Republic of the Congo", cap_lat: -4.31666666666666, cap_long: 15.3,},
+    {country: "Denmark", cap_lat: 55.6666666666666, cap_long: 12.583333,},
+    {country: "Djibouti", cap_lat: 11.5833333333333, cap_long: 43.15,},
+    {country: "Dominica", cap_lat: 15.3, cap_long: -61.4,},
+    {country: "Ecuador", cap_lat: -0.216666666666666, cap_long: -78.5,},
+    {country: "Egypt", cap_lat: 30.05, cap_long: 31.25,},
+    {country: "El Salvador", cap_lat: 13.7, cap_long: -89.2,},
+    {country: "England", cap_lat: 51.5, cap_long: -0.083333,},
+    {country: "Estonia", cap_lat: 59.4333333333333, cap_long: 24.716667,},
+    {country: "Ethiopia", cap_lat: 9.03333333333333, cap_long: 38.7,},
+    {country: "France", cap_lat: 48.8666666666666, cap_long: 2.333333,},
+    {country: "Georgia", cap_lat: 41.6833333333333, cap_long: 44.833333,},
+    {country: "Germany", cap_lat: 52.5166666666666, cap_long: 13.4,},
+    {country: "Greece", cap_lat: 37.9833333333333, cap_long: 23.733333,},
+    {country: "Guyana", cap_lat: 6.8, cap_long: -58.15,},
+    {country: "Haiti", cap_lat: 18.5333333333333, cap_long: -72.333333,},
+    {country: "Honduras", cap_lat: 14.1, cap_long: -87.216667,},
+    {country: "Hong Kong", cap_lat: 22.302711, cap_long: 114.177216,},
+    {country: "Hungary", cap_lat: 47.5, cap_long: 19.083333,},
+    {country: "Iceland", cap_lat: 64.15, cap_long: -21.95,},
+    {country: "India", cap_lat: 28.6, cap_long: 77.2,},
+    {country: "Indonesia", cap_lat: -6.16666666666666, cap_long: 106.816667,},
+    {country: "Iran", cap_lat: 35.7, cap_long: 51.416667,},
+    {country: "Ireland", cap_lat: 53.3166666666666, cap_long: -6.233333,},
+    {country: "Italy", cap_lat: 41.9, cap_long: 12.483333,},
+    {country: "Jamaica", cap_lat: 18, cap_long: -76.8,},
+    {country: "Japan", cap_lat: 35.6833333333333, cap_long: 139.75,},
+    {country: "Jordan", cap_lat: 31.95, cap_long: 35.933333,},
+    {country: "Kazakhstan", cap_lat: 51.1666666666666, cap_long: 71.416667,},
+    {country: "Kenya", cap_lat: -1.28333333333333, cap_long: 36.816667,},
+    {country: "Korea", cap_lat: 37.55, cap_long: 126.983333,},
+    {country: "Laos", cap_lat: 17.9666666666666, cap_long: 102.6,},
+    {country: "Latvia", cap_lat: 56.95, cap_long: 24.1,},
+    {country: "Lebanon", cap_lat: 33.8666666666666, cap_long: 35.5,},
+    {country: "Liechtenstein", cap_lat: 47.1333333333333, cap_long: 9.516667,},
+    {country: "Luxembourg", cap_lat: 49.6, cap_long: 6.116667,},
+    {country: "Malaysia", cap_lat: 3.16666666666666, cap_long: 101.7,},
+    {country: "Mexico", cap_lat: 19.4333333333333, cap_long: -99.133333,},
+    {country: "Moldova", cap_lat: 47, cap_long: 28.85,},
+    {country: "Morocco", cap_lat: 34.0166666666666, cap_long: -6.816667,},
+    {country: "Nepal", cap_lat: 27.7166666666666, cap_long: 85.316667,},
+    {country: "New Zealand", cap_lat: -41.3, cap_long: 174.783333,},
+    {country: "Nicaragua", cap_lat: 12.1333333333333, cap_long: -86.25,},
+    {country: "Nigeria", cap_lat: 9.08333333333333, cap_long: 7.533333,},
+    {country: "Norway", cap_lat: 59.9166666666666, cap_long: 10.75,},
+    {country: "Pakistan", cap_lat: 33.6833333333333, cap_long: 73.05,},
+    {country: "Poland", cap_lat: 52.25, cap_long: 21,},
+    {country: "Portugal", cap_lat: 38.7166666666666, cap_long: -9.133333,},
+    {country: "Russia", cap_lat: 55.75, cap_long: 37.6,},
+    {country: "Scotland", cap_lat: 55.953251, cap_long: -3.188267,},
+    {country: "Singapore", cap_lat: 1.28333333333333, cap_long: 103.85,},
+    {country: "Slovakia", cap_lat: 48.15, cap_long: 17.116667,},
+    {country: "South Africa", cap_lat: -25.7, cap_long: 28.216667,},
+    {country: "Spain", cap_lat: 40.4, cap_long: -3.683333,},
+    {country: "Sri Lanka", cap_lat: 6.91666666666666, cap_long: 79.833333,},
+    {country: "Sweden", cap_lat: 59.3333333333333, cap_long: 18.05,},
+    {country: "Switzerland", cap_lat: 46.9166666666666, cap_long: 7.466667,},
+    {country: "Taiwan", cap_lat: 25.0333333333333, cap_long: 121.516667,},
+    {country: "Tajikistan", cap_lat: 38.55, cap_long: 68.766667,},
+    {country: "Thailand", cap_lat: 13.75, cap_long: 100.516667,},
+    {country: "the Bahamas", cap_lat: 25.0833333333333, cap_long: -77.35,},
+    {country: "the Dominican Republic", cap_lat: 18.4666666666666, cap_long: -69.9,},
+    {country: "the Netherlands", cap_lat: 52.35, cap_long: 4.916667,},
+    {country: "the Philippines", cap_lat: 14.6, cap_long: 120.966667,},
+    {country: "Turkey", cap_lat: 39.9333333333333, cap_long: 32.866667,},
+    {country: "Ukraine", cap_lat: 50.4333333333333, cap_long: 30.516667,},
+    {country: "USA", cap_lat: -77.009056, cap_long: 38.883333,},
+    {country: "Uzbekistan", cap_lat: 41.3166666666666, cap_long: 69.25,},
+    {country: "Venezuela", cap_lat: 10.4833333333333, cap_long: -66.866667,},
+    {country: "Vietnam", cap_lat: 21.0333333333333, cap_long: 105.85,},
+    {country: "Wales", cap_lat: 51.481583, cap_long: -3.17909,}
+]
+
+function setMarker(location) {
     if (marker) {
         marker.setPosition(location);
     }
@@ -162,41 +266,36 @@ function setMarker(location, marker) {
             map: map,
         });
     }
-    return marker;
-}
-
-function checkGuess(guess) {
-    if (guess = country_var) {
-
-    }
 }
 
 function ReverseGeocodeLatLng(input, map) {
     guess_country = "";
 	var geocoder = new google.maps.Geocoder();
 
-    const latlngStr = input.toString().split(",", 2);
-    const latlng = {
+    var latlngStr = input.toString();
+    latlngStr = latlngStr.substring(1,latlngStr.indexOf(')'));
+    latlngStr = latlngStr.split(',', 2);
+    // window.alert(latlngStr[0] + " " + latlngStr[1]);
+    var latlng = {
       lat: parseFloat(latlngStr[0]),
       lng: parseFloat(latlngStr[1]),
     };
+    // window.alert(latlng.lat);
+    guess_lat = latlng.lat;
+    guess_long = latlng.lng;
 
 	if (input !== undefined) {
 		geocoder
             .geocode({location:input})
             .then((response) => { 
                 if (response.results[0]) {
-                    const marker = new google.maps.Marker({
-                        position: latlng,
-                        map: map,
-                    });
                     var components = response.results[0].address_components;
                     for (var component=0;component<(components.length);component++){
                         // window.alert(components[component].types[0]);
                         if (components[component].types[0] == "country") {
                             guess_country = components[component].long_name;
                             // window.alert(guess_country);
-                            document.getElementById("country").innerHTML = guess_country;
+                            document.getElementById("country").innerHTML = "Country guessed: " + guess_country;
                         }
                     }                    
                 }
@@ -208,28 +307,35 @@ function ReverseGeocodeLatLng(input, map) {
 }
 
 async function initMap() {
-  const { Map } = await google.maps.importLibrary("maps");
-  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+    const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-  map = new Map(document.getElementById("map"), {
-    zoom: 1.5,
-    center: { lat: 30, lng: 0 },
-    mapId: "DEMO_MAP_ID",
-  });
+    map = new Map(document.getElementById("map"), {
+        zoom: 1.5,
+        center: { lat: 30, lng: 0 },
+        mapId: "DEMO_MAP_ID",
+    });
 
-  var marker;
-
-  google.maps.event.addListener(map, 'click', function (event) {
-    marker = setMarker(event.latLng, marker);
-    ReverseGeocodeLatLng(event.latLng, map);
+    google.maps.event.addListener(map, 'click', function (event) {
+        setMarker(event.latLng);
+        ReverseGeocodeLatLng(event.latLng, map);
     })
 }
 
 document.getElementById("check-guess").addEventListener("click", checkGuess);
 
 function checkGuess() {
+    // window.alert(guess_country + country_var);
     if (guess_country == country_var) {
         document.getElementById("result").innerHTML = "you guessed right!";
+    }
+    else {
+        // window.alert("guess coords: " + guess_lat + ", " + guess_long + 
+        // " actual coords: " + lat_var + ", " + long_var);
+        distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(guess_lat, guess_long), new google.maps.LatLng(lat_var, long_var), 6371);  
+        sim_score = distance/20010;
+        // window.alert(distance);
+        document.getElementById("result").innerHTML = "you are " + distance + " km away. Your similarity score is " + sim_score + ".";
     }
 }
 
@@ -240,8 +346,14 @@ function generateDish() {
     country_var = options[number].country;
     dish_var = options[number].food;
     link_var = options[number].link;
-    document.getElementById("answer").innerHTML = country_var + ", " + dish_var;
+    // document.getElementById("answer").innerHTML = country_var + ", " + dish_var;
     document.getElementById("food-pic").innerHTML = '<img src="'+link_var+'" height="300"/>';  
+    for (var i = 0; i < capital_latlng.length; i++) {
+        if (capital_latlng[i].country == country_var) {
+            lat_var = capital_latlng[i].cap_lat;
+            long_var = capital_latlng[i].cap_long;
+        }
+    }
 }
 
 document.getElementById("instructions").addEventListener("click", showInstructions);
@@ -250,5 +362,12 @@ function showInstructions() {
     window.alert("Click the map below to make a guess of where this dish originates from! " + 
         " Click 'Check Guess' below to see how far you are from the actual country of origin.");
 }
+
+document.getElementById("give-up").addEventListener("click", giveUp);
+
+function giveUp() {
+    document.getElementById("result").innerHTML = "This dish is " + dish_var + " from " + country_var + "!";
+}
+
 
 initMap();
