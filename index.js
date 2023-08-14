@@ -336,6 +336,16 @@ function checkGuess() {
         sim_score = distance/20010;
         // window.alert(distance);
         document.getElementById("result").innerHTML = "you are " + distance + " km away. Your similarity score is " + sim_score + ".";
+        let element = document.querySelector("#color");
+        if (sim_score < 0.3) {
+            element.style.color = "green"
+        }
+        else if (sim_score < 0.6) {
+            element.style.color = "blue"
+        }
+        else{
+        element.style.color = "red"
+        }
     }
 }
 
@@ -354,13 +364,17 @@ function generateDish() {
             long_var = capital_latlng[i].cap_long;
         }
     }
+    document.querySelector("#color").style.color = "black";
+
 }
 
 document.getElementById("instructions").addEventListener("click", showInstructions);
 
 function showInstructions() {
     window.alert("Click the map below to make a guess of where this dish originates from! " + 
-        " Click 'Check Guess' below to see how far you are from the actual country of origin.");
+        " Click 'Check Guess' below to see how far you are from the actual country of origin.\n \n" +
+        " If the text is red, it means your similarity score is above 0.6. If it is blue, your similarity score is between 0.3 - 0.6." + 
+        " If it is green, then your similarity score is below 0.3 and you are close! ");
 }
 
 document.getElementById("give-up").addEventListener("click", giveUp);
